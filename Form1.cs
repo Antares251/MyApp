@@ -46,6 +46,7 @@ namespace MyApp
             rctTexto.Focus();
             path = "";
             save = false;
+            ssLabel.Text = "-";
         }
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,7 +98,6 @@ namespace MyApp
                 ssLabel.Text = "Guardado ✔";
                 guardarFunc();
             }
-
             
         }
 
