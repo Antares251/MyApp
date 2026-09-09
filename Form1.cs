@@ -16,6 +16,8 @@ namespace MyApp
         bool save = false;
         string path;
 
+        int temporizador = 15;
+
         public Form1()
         {
             InitializeComponent();
@@ -79,6 +81,31 @@ namespace MyApp
         private void rctTexto_TextChanged(object sender, EventArgs e)
         {
             guardarToolStripMenuItem.Enabled = true;
+            tmrReloj.Start();
+            ssLabel.Text = "⟳";
+            temporizador = 15;
+        }
+
+        private void tmrReloj_Tick(object sender, EventArgs e)
+        {
+            temporizador--;
+
+            if (temporizador == 0)
+            {
+                tmrReloj.Stop();
+                ssLabel.Text = "✔";
+                if (save == false)
+                {
+                    if (sfdGuardar.ShowDialog() == DialogResult.OK)
+                    {
+                        path = sfdGuardar.FileName;
+                        save = true;
+                    }
+
+                }
+                rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
+                guardarToolStripMenuItem.Enabled = false;
+            }
         }
     }
 }
