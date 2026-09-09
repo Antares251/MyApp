@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -49,15 +50,9 @@ namespace MyApp
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (save == false)
-            {
-                if (sfdGuardar.ShowDialog() == DialogResult.OK)
-                {
-                    path = sfdGuardar.FileName;
-                    save = true;
-                }
-
-            }
+            tmrReloj.Stop();
+            ssLabel.Text = "Guardado ✔";
+            guardarFunc();
             rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
             guardarToolStripMenuItem.Enabled = false;
         }
@@ -70,6 +65,8 @@ namespace MyApp
                 rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
                 guardarToolStripMenuItem.Enabled = true;
                 save = true;
+                tmrReloj.Stop();
+                ssLabel.Text = "Guardado ✔";
             }
         }
 
@@ -81,9 +78,13 @@ namespace MyApp
         private void rctTexto_TextChanged(object sender, EventArgs e)
         {
             guardarToolStripMenuItem.Enabled = true;
-            tmrReloj.Start();
-            ssLabel.Text = "⟳";
-            temporizador = 15;
+            if(autoGuardadoToolStripMenuItem.Checked)
+            {
+                tmrReloj.Stop();
+                ssLabel.Text = "⟳";
+                temporizador = 15;
+                tmrReloj.Start();
+            }
         }
 
         private void tmrReloj_Tick(object sender, EventArgs e)
@@ -93,19 +94,42 @@ namespace MyApp
             if (temporizador == 0)
             {
                 tmrReloj.Stop();
-                ssLabel.Text = "✔";
-                if (save == false)
-                {
-                    if (sfdGuardar.ShowDialog() == DialogResult.OK)
-                    {
-                        path = sfdGuardar.FileName;
-                        save = true;
-                    }
+                ssLabel.Text = "Guardado ✔";
+                guardarFunc();
+            }
 
-                }
+            
+        }
+
+        public void guardarFunc()
+        {
+                path = ofpAbrir.FileName;
+                save = true;
                 rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
                 guardarToolStripMenuItem.Enabled = false;
+   
+        }
+
+        private void autoGuardadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void autoGuardadoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            autoGuardadoToolStripMenuItem.Checked = !autoGuardadoToolStripMenuItem.Checked;
+
+            if (autoGuardadoToolStripMenuItem.Checked)
+            {
+                tmrReloj.Start();
+                ssLabel.Text = "⟳";
+            }
+            else
+            {
+                tmrReloj.Stop();
+                ssLabel.Text = "Auto-guardado desactivado";
             }
         }
     }
+
 }
