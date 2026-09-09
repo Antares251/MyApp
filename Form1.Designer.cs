@@ -142,8 +142,8 @@
             // ssLabel
             // 
             this.ssLabel.Name = "ssLabel";
-            this.ssLabel.Size = new System.Drawing.Size(17, 17);
-            this.ssLabel.Text = "⟳";
+            this.ssLabel.Size = new System.Drawing.Size(12, 17);
+            this.ssLabel.Text = "-";
             // 
             // tmrReloj
             // 
