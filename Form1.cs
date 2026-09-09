@@ -17,11 +17,12 @@ namespace MyApp
         bool save = false;
         string path;
 
-        int temporizador = 15;
+        int temporizador = 30;
 
         public Form1()
         {
             InitializeComponent();
+            tmrReloj.Interval = 1000;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -83,7 +84,7 @@ namespace MyApp
             {
                 tmrReloj.Stop();
                 ssLabel.Text = "⟳";
-                temporizador = 15;
+                temporizador = 30;
                 tmrReloj.Start();
             }
         }
