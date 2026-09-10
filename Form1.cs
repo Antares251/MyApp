@@ -17,7 +17,7 @@ namespace MyApp
         bool save = false;
         string path;
 
-        int temporizador = 30;
+        int temporizador = 10;
 
         public Form1()
         {
@@ -84,7 +84,7 @@ namespace MyApp
             {
                 tmrReloj.Stop();
                 ssLabel.Text = "⟳";
-                temporizador = 30;
+                temporizador = 10;
                 tmrReloj.Start();
             }
         }
