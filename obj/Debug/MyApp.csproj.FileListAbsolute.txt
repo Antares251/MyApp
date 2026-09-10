@@ -1,0 +1,10 @@
+C:\Users\Antares\Documents\Actividades Topicos\MyApp\MyApp\bin\Debug\MyApp.exe.config
+C:\Users\Antares\Documents\Actividades Topicos\MyApp\MyApp\bin\Debug\MyApp.exe
+C:\Users\Antares\Documents\Actividades Topicos\MyApp\MyApp\bin\Debug\MyApp.pdb
+C:\Users\Antares\Documents\Actividades Topicos\MyApp\MyApp\obj\Debug\MyApp.csproj.AssemblyReference.cache
+C:\Users\Antares\Documents\Actividades Topicos\MyApp\MyApp\obj\Debug\MyApp.Form1.resources
+C:\Users\Antares\Documents\Actividades Topicos\MyApp\MyApp\obj\Debug\MyApp.Properties.Resources.resources
+C:\Users\Antares\Documents\Actividades Topicos\MyApp\MyApp\obj\Debug\MyApp.csproj.GenerateResource.cache
+C:\Users\Antares\Documents\Actividades Topicos\MyApp\MyApp\obj\Debug\MyApp.csproj.CoreCompileInputs.cache
+C:\Users\Antares\Documents\Actividades Topicos\MyApp\MyApp\obj\Debug\MyApp.exe
+C:\Users\Antares\Documents\Actividades Topicos\MyApp\MyApp\obj\Debug\MyApp.pdb
