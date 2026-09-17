@@ -16,5 +16,14 @@ namespace MyApp
         {
             InitializeComponent();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            dgvInformacion.Rows.Add();
+
+            dgvInformacion[0, dgvInformacion.Rows.Count - 1].Value = dgvInformacion.Rows.Count;
+            dgvInformacion[1, dgvInformacion.Rows.Count - 1].Value = txtNombre.Text;
+            dgvInformacion[2,dgvInformacion.Rows.Count - 1].Value = mtbTelefono.Text;
+        }
     }
 }
