@@ -38,6 +38,8 @@
             this.colum1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnMostrar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -54,6 +56,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnBorrar);
+            this.splitContainer1.Panel1.Controls.Add(this.btnMostrar);
             this.splitContainer1.Panel1.Controls.Add(this.btnAgregar);
             this.splitContainer1.Panel1.Controls.Add(this.mtbTelefono);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
@@ -151,6 +155,26 @@
             this.Column3.ReadOnly = true;
             this.Column3.Width = 150;
             // 
+            // btnMostrar
+            // 
+            this.btnMostrar.Location = new System.Drawing.Point(253, 56);
+            this.btnMostrar.Name = "btnMostrar";
+            this.btnMostrar.Size = new System.Drawing.Size(106, 20);
+            this.btnMostrar.TabIndex = 5;
+            this.btnMostrar.Text = "Mostrar";
+            this.btnMostrar.UseVisualStyleBackColor = true;
+            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(149, 53);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.TabIndex = 6;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +205,8 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.MaskedTextBox mtbTelefono;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnMostrar;
+        private System.Windows.Forms.Button btnBorrar;
     }
 }
 
